@@ -1,3 +1,5 @@
+[![CI](https://github.com/RengbarH/webtechss22-debtcalculation-frontend/actions/workflows/ci.yml/badge.svg)](https://github.com/RengbarH/webtechss22-debtcalculation-frontend/actions/workflows/ci.yml)
+
 # debtcalculation-frontend
 
 ## Project setup
