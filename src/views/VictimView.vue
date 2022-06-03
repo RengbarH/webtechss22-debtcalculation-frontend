@@ -1,14 +1,14 @@
 <template>
 <h1>Welcome to Victims</h1>
   <div class="container-fluid">
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      <div class="col" v-for="debt in debts" :key="debt.id">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="col" v-for="creditor in creditors" :key="creditor.id">
         <div class="card h-100">
-          <img :src="getAvatar(debt)" class="card-img-top" :alt="debt.firstName">
+          <img :src="getAvatar(creditor)" class="card-img-top" :alt="creditor.firstName">
           <div class="card-body">
-            <h5 class="card-title">{{ debt.firstName }} </h5>
+            <h5 class="card-title">{{ creditor.firstName }} </h5>
             <p class="card-text">
-              {{ debt.firstName }} hat {{ debt.debts }} Euro Schulden.
+              {{ creditor.firstName }} hat {{ creditor.debts }} Euro Schulden.
             </p>
           </div>
         </div>
@@ -22,7 +22,7 @@ export default {
   name: 'VictimView',
   data () {
     return {
-      debts: [
+      creditors: [
         {
           id: 1,
           firstName: 'Max',
@@ -41,9 +41,9 @@ export default {
   methods: {
     getAvatar (debt) {
       if (debt.gender === 'MALE') {
-        return require('../assets/logo.png')
+        return require('../assets/man.png')
       } else if (debt.gender === 'FEMALE') {
-        return require('../assets/logo.png')
+        return require('../assets/woman.png')
       }
     }
   }

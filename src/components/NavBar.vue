@@ -11,10 +11,6 @@
           <router-link class="nav-link" to="/">Home</router-link>
           <router-link class="nav-link" to="/about">About</router-link>
           <router-link class="nav-link" to="/victim">Victim</router-link>
-
-          <!--          <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link active" href="#">About</a>
-                    <a class="nav-link active" href="#">jerk's victim</a>-->
         </div>
       </div>
     </div>
