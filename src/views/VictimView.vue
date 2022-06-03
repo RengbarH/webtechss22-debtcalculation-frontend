@@ -8,7 +8,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ creditor.firstName }} {{creditor.lastName}} </h5>
             <p class="card-text">
-              {{ creditor.firstName }} hat {{ creditor }} Euro Schulden.
+              {{ creditor.firstName }} hat {{ creditor.debtors.length }} Schuldner.
             </p>
           </div>
         </div>
@@ -22,18 +22,7 @@ export default {
   name: 'VictimView',
   data () {
     return {
-      creditors: [
-        {
-          id: 1,
-          firstName: 'Joe',
-          lastName: 'Biden'
-        },
-        {
-          id: 2,
-          firstName: 'Maxima',
-          lastName: 'Biden'
-        }
-      ]
+      creditors: []
     }
   },
   methods: {
@@ -44,6 +33,20 @@ export default {
         return require('../assets/woman.png')
       }
     }
+  },
+  mounted () {
+    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/creditor'
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    }
+
+    fetch(endpoint, requestOptions)
+      .then(response => response.json())
+      .then(result => result.forEach(creditor => {
+        this.creditors.push(creditor)
+      }))
+      .catch(error => console.log('error', error))
   }
 }
 </script>
