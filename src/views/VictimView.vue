@@ -1,15 +1,15 @@
 <template>
 <h1>Welcome to Victims</h1>
 <victims-card-list :creditors="this.creditors"></victims-card-list>
-<button-collapse></button-collapse>
+<button-create-creditor></button-create-creditor>
 </template>
 
 <script>
 import VictimsCardList from '@/components/VictimsCardList'
-import ButtonCollapse from '@/components/ButtonCollapse'
+import ButtonCreateCreditor from '@/components/ButtonCreateCreditor'
 export default {
   name: 'VictimView',
-  components: { ButtonCollapse, VictimsCardList },
+  components: { ButtonCreateCreditor, VictimsCardList },
   data () {
     return {
       creditors: []
